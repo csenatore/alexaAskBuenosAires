@@ -1,0 +1,9 @@
+/.settings
+/.settings/*
+/.settings/**/*
+/.buildpath
+/node_modules
+/node_modules/*
+/node_modules/**/*
+/frontend/temp
+/frontend/temp/**

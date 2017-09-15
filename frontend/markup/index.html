@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head lang="es">
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AskBuenosAires</title>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link href="css/style.css" rel="stylesheet">
+		<script src="js/main.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>	
+	</head>
+	<body ng-app="app" ng-controller="mainController as mainCtrl" ng-cloak>
+		<!-- Content -->
+		<md-content layout="column" class="content-styles" layout-fill>
+			<div ng-include="'includes/mainTitle.html'"></div> 
+			<!-- contenedor de views -->
+			<div layout-wrap ui-view></div>
+		</md-content>
+		<!-- /Content -->
+	<!-- googlemap -->
+  	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuxVsKYV7lgV6PnJiyLEdDpOy2kSjYM4c&libraries=places"></script>
+	</body>
+</html>
