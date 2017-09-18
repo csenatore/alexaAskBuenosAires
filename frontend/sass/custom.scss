@@ -93,19 +93,19 @@
 	border-right-width: 1px;
 	border-right-style: solid;
 	height: 60%;
-	color: #000000;
+	color: #ffffff;
 	margin: 0 20px;
 }
 
 .title{
-	color: #000000;
+	color: #ffffff;
 }
 
 .title-username {
 	font-size:14px;
 	float:left;
 	padding:14px 10px;
-	color: #000000;
+	color: #ffffff;
 }
 
 /* Nav */
@@ -159,3 +159,17 @@
     	overflow-y: auto;
 	}
 }
+
+.header-view{
+	background-color: #000!important;
+	.logo-img{
+		width:150px!important;
+	}
+	.map-div{
+		margin-left: 23%;
+		font-weight: bold;
+		font-size: 30px;
+	}
+}
+
+ 

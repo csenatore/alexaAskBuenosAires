@@ -1,6 +1,6 @@
 module.exports = function($scope, $http, $mdDialog, $location, $http, $interval) {
-	//const url = 'http://localhost:8000/';
-	const url = 'http://34.208.148.159:8000/';
+	const url = 'http://localhost:8000/';
+	//const url = 'http://34.208.148.159:8000/';
 
 	$scope.datetime = '';
 
@@ -80,7 +80,6 @@ module.exports = function($scope, $http, $mdDialog, $location, $http, $interval)
 	    		$scope.markersArray.push(marker);
 	    	}
 		});
-
 	}
 
 	//obtiene los datos de la tabla mysql
@@ -108,6 +107,7 @@ module.exports = function($scope, $http, $mdDialog, $location, $http, $interval)
 		    			$scope.class = 'col-lg-8 col-md-8 col-sm-8';
 						$scope.card ='col-lg-4 col-md-4 col-sm-4';
 		    			$scope.indicador = true;	
+		    			$scope.title = 'Indicaciones'
 		    			break;
 		    		
 		    		case 'geocode':
@@ -122,6 +122,15 @@ module.exports = function($scope, $http, $mdDialog, $location, $http, $interval)
 		    			$scope.class = 'col-lg-8 col-md-8 col-sm-8';
 						$scope.card ='col-lg-4 col-md-4 col-sm-4';
 						$scope.indicador = true;
+						$scope.title = 'Información adicional'
+		    			break;
+
+		    		case 'placesAutocomplete':
+		    			$scope.setPlaces();
+		    			$scope.class = 'col-lg-8 col-md-8 col-sm-8';
+						$scope.card ='col-lg-4 col-md-4 col-sm-4';
+						$scope.indicador = true;
+						$scope.title = 'Información adicional'
 		    			break;
 
 		    		default:
