@@ -49,8 +49,8 @@ module.exports = function($stateProvider, $urlRouterProvider, $mdDateLocaleProvi
 };
 },{}],3:[function(require,module,exports){
 module.exports = function($scope, $http, $mdDialog, $location, $http, $interval) {
-	const url = 'http://localhost:8000/';
-	//const url = 'http://34.208.148.159:8000/';
+	//const url = 'http://localhost:8000/';
+	const url = 'http://34.208.148.159:8000/';
 
 	$scope.datetime = '';
 
@@ -118,12 +118,14 @@ module.exports = function($scope, $http, $mdDialog, $location, $http, $interval)
 
 	$scope.setPlaces = function(){
 		$http.get(url + 'getPlaces').then(function(response){
-			
+			var labels = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 			var places = response.data;
-
+			$scope.labels = labels;
+			$scope.places = places;
 			for (var n = 0; n < places.length; n++) {
 	    		var marker = new google.maps.Marker({
 				    position: new google.maps.LatLng(places[n].lat, places[n].lng),
+				    label: labels[n],
 				    map: $scope.googleMap
 				});
 	    		//self.createInfoWindow(marker, $scope.ordenesVerificador[n], verificadorId);

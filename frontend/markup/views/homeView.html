@@ -1,18 +1,32 @@
 <div ng-controller="homeController as ctrl" class="home-view">
-	<div ng-class="class">
+	<div ng-class="class" class="nopad">
+		
 		<div>
-			<h3 style="font-weight:bold" class="md-headline">Mapa</h3> 
-		</div>
-		<div>
-	        <div id="map"></div> 		
+	        <div style="height:calc(100vh - 64px); " id="map"></div> 		
 	    </div>
     </div> 
     <div ng-class="card" ng-show="indicador">
 		<div>
 			<h3 style="font-weight:bold" class="md-headline">{{title}}</h3>
 		</div>
-		<div ng-show="indicador">
-	        <div id="right-panel"></div>		
+		<div ng-show="indicador" class="map-card">
+	        <div id="right-panel">
+	        	<div ng-repeat="info in places" class="info-adicional">
+	        		<h4>{{labels[$index]}}</h4>
+	        		<span><strong>Nombre: </strong>{{info.name}}</span>
+	        		<span><strong>Dirección:</strong> {{info.address}}</span>
+	        		<div>
+	        		<span ng-show="labels[$index] != 'A'"><strong>Horario de atención:</strong></span>
+	        		<span ng-show="info.openHSDo != 'Información no disponible'">{{info.openHSDo}}</span>
+	        		<span ng-show="info.openHSLu != 'Información no disponible'">{{info.openHSLu}}</span>
+	        		<span ng-show="info.openHSMa != 'Información no disponible'">{{info.openHSMa}}</span>
+	        		<span ng-show="info.openHSMi != 'Información no disponible'">{{info.openHSMi}}</span>
+	        		<span ng-show="info.openHSJu != 'Información no disponible'">{{info.openHSJu}}</span>
+	        		<span ng-show="info.openHSVi != 'Información no disponible'">{{info.openHSVi}}</span>
+	        		<span ng-show="info.openHSSa != 'Información no disponible'">{{info.openHSSa}}</span>
+	        		</div>
+	        	</div>
+	        </div>		
 	    </div>
     </div>
 </div>

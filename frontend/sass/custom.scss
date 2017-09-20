@@ -158,12 +158,18 @@
 		max-height: 500px!important;
     	overflow-y: auto;
 	}
+	.info-adicional span{
+		display:block;
+	}
+	.nopad{
+		padding: 0px;
+	}
 }
 
 .header-view{
 	background-color: #000!important;
 	.logo-img{
-		width:150px!important;
+		width:90px!important;
 	}
 	.map-div{
 		margin-left: 23%;
@@ -171,5 +177,10 @@
 		font-size: 30px;
 	}
 }
+
+.logoAdjust{
+	max-width:200px;
+}
+
 
  
