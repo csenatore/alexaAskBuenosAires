@@ -1,4 +1,3 @@
-'use strict'; 
 require('angular');
 require('angular-sanitize');
 require('angular-ui-router');
