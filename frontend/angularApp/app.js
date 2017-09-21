@@ -22,6 +22,6 @@ app.config(config);
 /*controllers*/
 var mainController = require('./controllers/mainController');
 var homeController = require('./controllers/homeController');
-app.controller('mainController', ['$scope', '$http', '$rootScope', mainController]);
+app.controller('mainController', ['$scope', '$http', '$location', '$rootScope', mainController]);
 app.controller('homeController', ['$scope', '$http','$mdDialog', '$location', '$http','$interval', homeController]);
 

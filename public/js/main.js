@@ -1,5 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict'; 
 require('angular');
 require('angular-sanitize');
 require('angular-ui-router');
@@ -24,16 +23,19 @@ app.config(config);
 /*controllers*/
 var mainController = require('./controllers/mainController');
 var homeController = require('./controllers/homeController');
-app.controller('mainController', ['$scope', '$http', '$rootScope', mainController]);
+app.controller('mainController', ['$scope', '$http', '$location', '$rootScope', mainController]);
 app.controller('homeController', ['$scope', '$http','$mdDialog', '$location', '$http','$interval', homeController]);
 
 
 },{"./config":2,"./controllers/homeController":3,"./controllers/mainController":4,"angular":101,"angular-animate":6,"angular-aria":8,"angular-google-chart":9,"angular-material":11,"angular-sanitize":13,"angular-ui-router":17}],2:[function(require,module,exports){
 module.exports = function($stateProvider, $urlRouterProvider, $mdDateLocaleProvider) {
 	
-	$urlRouterProvider.otherwise("/home"); //redireccion a una pagina por defecto
+	$urlRouterProvider.otherwise("/inicio"); //redireccion a una pagina por defecto
 	
-	$stateProvider.state('/home', {
+	$stateProvider.state('/inicio', {
+        url : "/inicio",
+        templateUrl : "views/mainView.html",
+    }).state('/home', {
 		url : "/home",
 		templateUrl : "views/homeView.html",
 	});
@@ -206,6 +208,13 @@ module.exports = function($scope, $http, $mdDialog, $location, $http, $interval)
 },{}],4:[function(require,module,exports){
 module.exports = function($scope, $http, $rootScope) {
 	var self = this;   
+	
+	
+	$scope.goToHome = function(){
+		$location.path("/homeView");
+
+	};
+
 	console.log("main controller"); 
 };
 },{}],5:[function(require,module,exports){

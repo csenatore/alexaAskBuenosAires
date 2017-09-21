@@ -1,8 +1,11 @@
 module.exports = function($stateProvider, $urlRouterProvider, $mdDateLocaleProvider) {
 	
-	$urlRouterProvider.otherwise("/home"); //redireccion a una pagina por defecto
+	$urlRouterProvider.otherwise("/inicio"); //redireccion a una pagina por defecto
 	
-	$stateProvider.state('/home', {
+	$stateProvider.state('/inicio', {
+        url : "/inicio",
+        templateUrl : "views/mainView.html",
+    }).state('/home', {
 		url : "/home",
 		templateUrl : "views/homeView.html",
 	});
