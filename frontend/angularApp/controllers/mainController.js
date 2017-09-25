@@ -1,9 +1,8 @@
-module.exports = function($scope, $http, $rootScope) {
+module.exports = function($scope, $http, $rootScope, $location) {
 	var self = this;   
-	
-	
+		
 	$scope.goToHome = function(){
-		$location.path("/homeView");
+		$location.path("/home");
 
 	};
 
